@@ -1,5 +1,4 @@
 import Button from '../../../../components/UI/Button';
-import Icon from "../../../icons";
 
 const Menu = () => {
     return (
