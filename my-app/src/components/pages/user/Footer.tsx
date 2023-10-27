@@ -4,47 +4,40 @@ const Footer = () => {
         <div className="page-container wrapper">
             <div className="about row">
                 <div className=" col-lg-3 col-sm-6 col-12 ">
-                    <span className="title" >Need Help</span>
+                    <span className="title" >Chăm sóc khách hàng</span>
                     <ul>
-                        <li>Contact Us</li>
-                        <li>Track Order</li>
-                        <li>Returns & Refunds</li>
-                        <li>FAQ's</li>
-                        <li>Career</li>
+                        <li>Trung Tâm Trợ Giúp</li>
+                        <li>Trả hàng & Hoàn tiền</li>
+                        <li>Câu hỏi thường gặp</li>
                     </ul>
                 </div>
                 <div className=" col-lg-3 col-sm-6 col-12">
-                    <span className="title">Company</span>
+                    <span className="title">Công ty</span>
                     <ul>
-                        <li>About Us</li>
+                        <li>Về chúng tôi</li>
                         <li>Blog</li>
-                        <li>Collaboration</li>
-                        <li>Media</li>
+                        <li>Hợp tác</li>
+                        <li>Phương tiện truyền thông</li>
                     </ul>
                 </div>
                 <div className=" col-lg-3 col-sm-6 col-12">
-                    <span className="title">More Info</span>
+                    <span className="title">Thông tin chi tiết</span>
                     <ul>
-                        <li>Term and Conditions</li>
-                        <li>Privacy Policy</li>
-                        <li>Shipping Policy</li>
-                        <li>Sitemap</li>
+                        <li>Điều khoản và điệu kiện</li>
+                        <li>Chính sách bảo mật</li>
+                        <li>Chính sách vận chuyển</li>
                     </ul>
                 </div>
                 <div className=" col-lg-3 col-sm-6 col-12">
-                    <span className="title">Contact</span>
+                    <span className="title">Liên hệ</span>
                     <ul>
                         <li>support.ksneaker@gmail.com</li>
-                        <li>175 Tay Son, Hanoi, Vietnam</li>
+                        <li>175 Tây Sơn, Hà Nội, Việt Nam</li>
                     </ul>
                 </div>
             </div >
-            <div className="category">
-                <span >Popular Category</span>
-                <i className="fa-solid fa-chevron-down"></i>
-            </div>
             <div className="copyright">
-                Copyright © 2023 KSneakers. All rights reserved.
+                © 2023 KSneakers. Tất cả các quyền được bảo lưu.
             </div>
         </div >
     );

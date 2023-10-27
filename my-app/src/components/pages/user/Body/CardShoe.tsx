@@ -9,7 +9,10 @@ const CardShoe = ({ data }: any) => {
                 <Button className=" button heart" onClick={() => {
                     console.log('add wishlist');
                 }}>
-                    <i className="fa-regular fa-heart"></i>
+                    {true ?
+                        <i className="fa-regular fa-heart" ></i>
+                        :
+                        <i className="fa-solid fa-heart" style={{ color: 'red' }}></i>}
                 </Button>
                 <Link to={`/product/${data.id}`} >
                     <div className="card">

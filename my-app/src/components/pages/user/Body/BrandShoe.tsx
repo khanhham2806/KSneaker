@@ -21,7 +21,7 @@ const BrandShoe = (props: any) => {
                 </Button>
             </div>
             <div className="product">
-                {data.map((item: any, index: number) => {
+                {data?.map((item: any, index: number) => {
                     return (
                         <CardShoe data={item} key={index} />
                     )

@@ -6,7 +6,7 @@ const SignInPage = () => {
             <div className="form-container">
                 <div className="form">
                     <div className="title">
-                        Sign In
+                        Đăng nhập
                     </div>
                     <FormSignIn />
                 </div>

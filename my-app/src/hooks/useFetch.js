@@ -16,6 +16,7 @@ const useFetch = (url) => {
                 //     data = data && response.data ? data : [];
                 // }
                 let data = response && response.data ? response.data.data : []
+                // console.log(data);
                 setData(data)
                 setIsLoading(false)
             }
@@ -24,7 +25,7 @@ const useFetch = (url) => {
             }
         }
         fetchData();
-    }, [])
+    }, [url])
     return {
         data,
         isLoading

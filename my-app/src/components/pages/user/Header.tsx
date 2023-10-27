@@ -8,29 +8,54 @@ import Menu from "./Header/Menu";
 import useWindowDimensions from "../../../hooks/useWindowDimensions";
 const Header = () => {
     const { width } = useWindowDimensions();
+    console.log(width)
     useEffect(() => {
         console.log('render')
     }, [])
-    return (
 
+    if (width <= 576) {
+        return (
+            <div className="page-container navbar wrapper">
+                <Brand height={60} />
+                {/* <NavBar /> */}
+                {/* <Search /> */}
+                {/* <User /> */}
+
+                <Menu />
+            </div>
+        );
+    }
+    else if (width <= 768) {
+        return (
+            <div className="page-container navbar wrapper">
+                <Brand height={60} />
+                {/* <NavBar /> */}
+                <Search />
+                {/* <User /> */}
+                <Menu />
+            </div>
+        );
+    }
+    else if (width <= 992) {
+        return (
+            <div className="page-container navbar wrapper">
+                <Brand height={60} />
+                {/* <NavBar /> */}
+                <Search />
+                <User />
+                {/* <Menu /> */}
+            </div>
+        );
+    }
+    else return (
         <div className="page-container navbar wrapper">
-            {(width > 768)
-                ? <>
-                    <Brand height={60} />
-                    <NavBar />
-                    <Search />
-                    <User />
-                </>
-                :
-                <>
-                    <Brand height={60} />
-                    <Search />
-                    <Menu />
-                </>
-
-            }
+            <Brand height={60} />
+            <NavBar />
+            <Search />
+            <User />
         </div>
     );
+
 }
 
 export default Header;

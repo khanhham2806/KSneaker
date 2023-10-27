@@ -1,10 +1,17 @@
 import { useState } from "react";
+import { registerUser } from "../../redux/apiRequest";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 const FormSignUp = () => {
     const [showPassword, setShowPassword] = useState(false)
     const [showRepassword, setShowRepassword] = useState(false)
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [repassword, setRepassword] = useState('')
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const handleShowPassword = (e: any) => {
         e.preventDefault()
         setShowPassword(!showPassword)
@@ -15,23 +22,27 @@ const FormSignUp = () => {
     }
     const handleSubmitForm = (e: any) => {
         e.preventDefault()
-        console.log(username, password)
+        const newUser = {
+            username: username,
+            password: password
+        }
+        registerUser(newUser, dispatch, navigate)
     }
     return (
         <div className='form-content' >
             <div className="input-field">
-                <label htmlFor="userName">Username</label>
+                <label htmlFor="userName">Tên đăng nhập</label>
                 <input
                     onChange={(e) => setUsername(e.target.value)}
-                    value={username} placeholder='username'
+                    value={username} placeholder='Nhập tên đăng nhập'
                     type="text"
                     id="userName" />
             </div>
             <div className="input-field password">
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Mật khẩu</label>
                 <input
                     onChange={(e) => setPassword(e.target.value)}
-                    value={password} placeholder='password'
+                    value={password} placeholder='Nhập mật khẩu'
                     type={showPassword ? "text" : "password"}
                     id="password" />
                 {password
@@ -45,10 +56,10 @@ const FormSignUp = () => {
 
             </div>
             <div className="input-field password">
-                <label htmlFor="password">Repassword</label>
+                <label htmlFor="password">Nhắc lại mật khẩu</label>
                 <input
                     onChange={(e) => setRepassword(e.target.value)}
-                    value={repassword} placeholder='password'
+                    value={repassword} placeholder='Nhập lại mật khẩu'
                     type={showRepassword ? "text" : "password"}
                     id="password" />
                 {password
@@ -63,8 +74,8 @@ const FormSignUp = () => {
             </div>
             <button disabled={username && password && repassword ? false : true}
                 className={username && password && repassword ? "button active " : "button not-allowed"} type="submit"
-                onSubmit={(e) => handleSubmitForm(e)}
-            >Sign Up</button>
+                onClick={(e) => handleSubmitForm(e)}
+            >Đăng ký</button>
         </div >
     );
 }

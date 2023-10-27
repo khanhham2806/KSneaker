@@ -64,7 +64,7 @@ app
 
 app
   .route("/user/:id")
-  .get(function (req, res) {
+  .get(authMiddleware.isAuth, function (req, res) {
     const { id } = req.params;
     let sql = "SELECT * FROM user WHERE id = ?";
     con.query(sql, id, (err, response) => {
@@ -109,11 +109,6 @@ app
       }
     });
   });
-app.use("/auth", router);
-
-app.get("/profile", authMiddleware.isAuth, async (req, res) => {
-  res.send(req.user);
-});
 
 app.use("/auth", router);
 

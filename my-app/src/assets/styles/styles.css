@@ -16,11 +16,11 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+  font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 
@@ -12088,7 +12088,6 @@ textarea.form-control-lg {
   font-size: 20px;
   font-style: normal;
   font-weight: 200;
-  line-height: normal;
   text-decoration: none;
   color: #000;
 }
@@ -12096,7 +12095,7 @@ textarea.form-control-lg {
   cursor: pointer;
 }
 #header .wrapper .nav-bar-list .active {
-  font-weight: 700;
+  font-weight: 500;
 }
 #header .wrapper .search-input {
   box-sizing: border-box;
@@ -12117,16 +12116,13 @@ textarea.form-control-lg {
   display: flex;
   gap: 12px;
 }
-#header .wrapper .user-list .sign-in {
-  background-color: #8a33fd;
-  min-width: 75px;
-  min-height: 41px;
-  color: #fff;
+#header .wrapper .user-list .sign {
+  gap: 10px;
+  color: #000;
 }
-#header .wrapper .user-list .sign-up {
-  min-height: 41px;
-  min-width: 75px;
-  border: 1px solid #000;
+#header .wrapper .user-list .active .sign {
+  background-color: #8a33fd !important;
+  color: #fff;
 }
 
 #main a {
@@ -12411,6 +12407,22 @@ textarea.form-control-lg {
   padding: 40px;
   text-align: center;
   line-height: 200%;
+}
+
+.admin-layout a {
+  text-decoration: none;
+}
+.admin-layout .admin-header {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin-layout .admin-header .notification {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .button {

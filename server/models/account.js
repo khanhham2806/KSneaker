@@ -36,20 +36,20 @@ exports.registerAccount = async ({ username, password, fullname, email }) => {
   });
 };
 
-exports.updateRefreshToken = async ({ refreshToken, id }) => {
-  return new Promise((resolve, reject) => {
-    const sql = "UPDATE user SET ? WHERE id = ?";
-    const newUser = {
-      refreshToken: refreshToken,
-    };
-    connect.query(sql, [newUser, id], function (err, data) {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(data);
-      }
-    });
-  });
-};
+// exports.updateRefreshToken = async ({ refreshToken, id }) => {
+//   return new Promise((resolve, reject) => {
+//     const sql = "UPDATE user SET ? WHERE id = ?";
+//     const newUser = {
+//       refreshToken: refreshToken,
+//     };
+//     connect.query(sql, [newUser, id], function (err, data) {
+//       if (err) {
+//         reject(err);
+//       } else {
+//         resolve(data);
+//       }
+//     });
+//   });
+// };
 
 exports.deleteAccount = async () => { };

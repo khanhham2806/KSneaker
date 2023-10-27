@@ -71,14 +71,14 @@ exports.login = async (req, res, next) => {
       .send("Đăng nhập không thành công, vui lòng thử lại.");
   }
   let refreshToken = randToken.generate(jwtVariable.refreshTokenSize); // tạo 1 refresh token ngẫu nhiên
-  if (!user.refreshToken) {
-    // Nếu user này chưa có refresh token thì lưu refresh token đó vào database
-    await updateRefreshToken({ refreshToken, id: user.id });
-  } else {
-    // Nếu user này đã có refresh token thì lấy refresh token đó từ database
-    refreshToken = user.refreshToken;
-  }
-  return res.send({
+  // if (!user.refreshToken) {
+  //   // Nếu user này chưa có refresh token thì lưu refresh token đó vào database
+  //   await updateRefreshToken({ refreshToken, id: user.id });
+  // } else {
+  //   // Nếu user này đã có refresh token thì lấy refresh token đó từ database
+  //   refreshToken = user.refreshToken;
+  // }
+  return res.status(200).send({
     msg: "Đăng nhập thành công.",
     accessToken,
     refreshToken,

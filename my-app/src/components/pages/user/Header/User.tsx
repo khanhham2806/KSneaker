@@ -1,9 +1,14 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Button from "../../../UI/Button"
+import UserLayout from "../../../layout/user";
+import { useSelector } from "react-redux";
 const User = () => {
+    const user = useSelector((state: any) => state.auth.login.currentUser?.user)
+    console.log('>>user', user)
     return (
+        // <UserLayout>
         < div className="user-list">
-            {true ?
+            {(user) ?
                 <>
                     <Button className='button' >
                         <i className="fa-solid fa-heart"></i>
@@ -11,25 +16,30 @@ const User = () => {
                     <Button className='button' >
                         <i className="fa-solid fa-user"></i>
                     </Button >
-                    <Button className='button' >
-                        <i className="fa-solid fa-cart-shopping"></i>
-                    </Button>
+                    <NavLink to='/cart'>
+                        <Button className='button' >
+                            <i className="fa-solid fa-cart-shopping"></i>
+                        </Button>
+                    </NavLink>
                 </>
                 :
                 <>
-                    <Link to="/sign-in">
-                        <Button className='button sign-in' >
-                            <span>Sign In</span>
+                    <NavLink to="/sign-in">
+                        <Button className='button sign-in sign' >
+                            <span>Đăng nhập</span>
+                            <i className="fa-solid fa-right-to-bracket"></i>
                         </Button>
-                    </Link>
-                    <Link to="/sign-up">
-                        <Button className='button sign-up' >
-                            <span>Sign Up</span>
+                    </NavLink>
+                    <NavLink to="/sign-up">
+                        <Button className='button sign-up sign' >
+                            <span>Đăng ký</span>
+                            <i className="fa-solid fa-user-plus"></i>
                         </Button >
-                    </Link>
+                    </NavLink>
                 </>
             }
         </div>
+        // </UserLayout>
     );
 }
 

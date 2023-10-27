@@ -6,7 +6,7 @@ const SignUpPage = () => {
             <div className="form-container">
                 <div className="form">
                     <div className="title">
-                        Sign Up
+                        Đăng ký
                     </div>
                     <FormSignUp />
                 </div>
