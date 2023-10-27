@@ -1,5 +1,4 @@
 import Button from "../../../UI/Button";
-import Icon from "../../../icons";
 import { useState } from "react";
 const FilterSide = () => {
 
